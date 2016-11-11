@@ -14,16 +14,15 @@
 
 import requests
 from bs4 import BeautifulSoup
-import re
+import string
 
 base_url = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
 r = requests.get(base_url)						#requests Beautiful Soup output of html code of webpage
 soup = BeautifulSoup(r.text, "html.parser")		#assigns to variable soup
 
-text=soup('p')
-l=[]
-for x in text:
-	s=re.findall('.*student.*',str(x))
-	for a in s:
-		l.append(a)
-print (l)
+text=soup.prettify()
+new=text.replace("student","AMAZING student")
+print (new)
+
+
+
