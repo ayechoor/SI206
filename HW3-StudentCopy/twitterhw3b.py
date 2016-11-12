@@ -8,13 +8,12 @@
 # Be prepared to change the search term during demo.
 import tweepy
 from textblob import TextBlob
-import re
 
 # Unique code from Twitter
 access_token = "1454475356-onACrHpDMComjV1rB3oGRtp77JwJKtnupsu44MR"
-access_token_secret = "NeiVkWMj7vkEpbHRdikQvVAA9McxVDIbl9qwOfMPEtndQ"
+access_token_secret = ""
 consumer_key = "6ftTHfh9nKAARv162a0p3NnAd"
-consumer_secret = "o1sY41Ku4CrdpqvHfqUBRgATua179GsuTnuNUbMki4LBOXCWGV"
+consumer_secret = ""
 
 # Boilerplate code here
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
@@ -29,6 +28,7 @@ subjectivity=[]
 
 for tweet in public_tweets:
 	print(tweet.text)
+	print()
 	analysis = TextBlob(tweet.text)
 	polarity.append(analysis.sentiment.polarity)
 	subjectivity.append(analysis.sentiment.subjectivity)
