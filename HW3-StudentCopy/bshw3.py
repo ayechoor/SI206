@@ -21,8 +21,13 @@ r = requests.get(base_url)						#requests Beautiful Soup output of html code of 
 soup = BeautifulSoup(r.text, "html.parser")		#assigns to variable soup
 
 text=soup.prettify()
-new=text.replace("student","AMAZING student")
-print (new)
 
+new = text.replace("student","AMAZING student")
+new = new.replace("https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg", "media/picture.png")
+new = new.replace("logo2.png", "media/logo.png")
+
+f=open("bshw3_new.html",'w')
+f.write(new)
+f.close()
 
 

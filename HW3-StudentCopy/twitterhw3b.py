@@ -21,7 +21,6 @@ auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 
 api = tweepy.API(auth)
-#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
 
 public_tweets = api.search('Trump')
 
@@ -37,5 +36,6 @@ for tweet in public_tweets:
 avg_polarity = sum(polarity)/len(polarity)
 avg_subjectivity = sum(subjectivity)/len(subjectivity)
 
+print ()
 print("Average polarity is", avg_polarity)
 print("Average subjectivity is", avg_subjectivity)
